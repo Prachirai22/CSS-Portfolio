@@ -1,0 +1,397 @@
+/* ========== Global Styles ========== */
+:root {
+  --primary: #c27eb3;
+  --dark: #2c2c54;
+  --light: #ffffff;
+  --gray: #f8f8fa;
+  --text: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--text);
+  background-color: var(--gray);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ========== Header / Navigation ========== */
+header {
+  background-color: var(--dark);
+  color: var(--light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: var(--primary);
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+/* ========== Hero Section ========== */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--dark));
+  color: var(--light);
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.hero-summary {
+  margin: 1rem 0 2rem;
+  font-size: 1.1rem;
+}
+
+.cta {
+  background-color: var(--light);
+  color: var(--dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.cta.secondary {
+  background-color: transparent;
+  color: var(--light);
+  border: 2px solid var(--light);
+}
+
+.cta.secondary:hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* ========== Section Styles ========== */
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  background-color: var(--light);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+section header h2 {
+  color: var(--dark);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 3px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.section-intro {
+  color: #666;
+}
+
+/* ========== About Section ========== */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.profile img {
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+}
+
+.profile-bio p {
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
+
+/* ========== Projects ========== */
+.projects-list {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+}
+
+.projects-list article {
+  background-color: var(--gray);
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects-list article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.projects-list h3 {
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.projects-list a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.projects-list a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Skills Table ========== */
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.skills-table caption {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.skills-table th, .skills-table td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.skills-table th {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+progress {
+  width: 100%;
+  height: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 8px;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--primary);
+}
+
+/* ========== Contact Form ========== */
+form {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+fieldset {
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+legend {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+input, textarea {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(194,126,179,0.2);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--light);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--dark);
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.social-links img {
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta {
+    display: block;
+    margin: 0.5rem auto;
+  }
+}
+
+/* Back to Top Button */
+#topBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position */
+  bottom: 20px; /* Place 20px from the bottom */
+  right: 30px; /* Place 30px from the right */
+  z-index: 99; /* Stay on top */
+  border: none;
+  outline: none;
+  background-color: rgb(0, 123, 255); /* Blue background using RGB */
+  color: rgb(255, 255, 255); /* White text */
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+#topBtn:hover {
+  background-color: rgb(0, 90, 200); /* Darker blue on hover */
+}
+
